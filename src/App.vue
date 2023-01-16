@@ -9,10 +9,10 @@ export default {
         }
     },
     methods: {
-        searchMovie(sourceText) {
+        searchMovie(searchText) {
             axios.get(" https://api.themoviedb.org/3/search/movie?api_key=56fe84a4653ee995f78bcfae8038ddd7", {
                 params: {
-                    query: sourceText,
+                    query: searchText,
                     page: 1,
                     include_adult: false,
                 }
@@ -26,10 +26,10 @@ export default {
                     console.log(error);
                 });
         },
-        searchTvshow(sourceText) {
+        searchTvshow(searchText) {
             axios.get(" https://api.themoviedb.org/3/search/tv?api_key=56fe84a4653ee995f78bcfae8038ddd7", {
                 params: {
-                    query: sourceText,
+                    query: searchText,
                     page: 1,
                     include_adult: false,
                 }
