@@ -14,9 +14,9 @@ export default {
     },
     methods: {
 
-},
+    },
     created() {
-        
+
     },
 }
 </script>
@@ -38,6 +38,18 @@ export default {
             </div>
 
             <h2>Tv shows</h2>
+            <div class="col-4" v-for="tvShow in store.searchedTvshow">
+                <img :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" :alt="tvShow.name">
+                <h4>
+                    {{ tvShow.name }}
+                </h4>
+                <h5>
+                    <em>{{ tvShow.original_name }}</em>
+                </h5>
+                <p>Language: <lang-flag :iso="tvShow.original_language" /> </p>
+                <p>Rating: {{ tvShow.vote_average }}</p>
+                <p>Rating: {{ Math.ceil(tvShow.vote_average / 2) }}</p>
+            </div>
         </div>
 
     </section>
@@ -45,4 +57,5 @@ export default {
 
 
 <style lang="scss" scoped>
+
 </style>

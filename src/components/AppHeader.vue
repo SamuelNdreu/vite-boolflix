@@ -8,6 +8,7 @@ export default {
             store,
             apiKey:'56fe84a4653ee995f78bcfae8038ddd7',
             apiUri:'https://api.themoviedb.org/3/search/movie',
+            apiUriTvShows:'https://api.themoviedb.org/3/search/tv',
         }
     },
     methods: {
@@ -28,10 +29,30 @@ export default {
                 console.warn (error)
             });
 
-        }
+        },
+        getTvShows(searchedQuery){
+            //chiamata API
+            axios.get(this.apiUriTvShows,{ 
+                params:{
+                    api_key:this.apiKey,
+                    query: searchedQuery
+                }
+                
+            })
+            .then( (response) => {
+                console.log(response.data.results);
+                this.store.searchedTvshow = response.data.results;
+            })
+            .catch( function (error) {
+                console.warn (error)
+            });
+
+        },
+        
     },
     created() {
         this.getMovies();
+        this.getTvShows;
     },
 }
 </script>

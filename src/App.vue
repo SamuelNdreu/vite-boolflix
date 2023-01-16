@@ -19,15 +19,15 @@ export default {
             })
                 .then((response) => {
                     console.log(response.data.results);
-                    store.searchedMovie = response.data.results
-                    console.log(store.searchedMovie);
+                    store.moviesList = response.data.results
+                    console.log(store.moviesList);
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
         },
         searchTvshow(sourceText) {
-            axios.get(" https://api.themoviedb.org/3/search/tv?api_key=4bc85001b5721a0ecbd19f8488e3f941", {
+            axios.get(" https://api.themoviedb.org/3/search/tv?api_key=56fe84a4653ee995f78bcfae8038ddd7", {
                 params: {
                     query: sourceText,
                     page: 1,
