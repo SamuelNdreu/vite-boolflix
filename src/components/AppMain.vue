@@ -36,7 +36,8 @@ export default {
                         {{ movie.original_title }}
                     </h5>
                     <p>Language: <lang-flag :iso="movie.original_language" /></p>
-                    <p>Rating: <i class="fa-solid fa-star" v-for="n in Math.ceil(movie.vote_average / 2)"></i></p>
+                    <p>Rating: <i class="fa-solid fa-star" v-for="n in Math.ceil(movie.vote_average / 2)"></i><i
+                            class="fa-regular fa-star" v-for="n in Math.floor(5 - (movie.vote_average / 2))"></i></p>
                     <p class="overview">
                         Overview: {{ movie.overview }}
                     </p>
@@ -77,5 +78,12 @@ img:hover {
     filter: opacity(10%);
 }
 
+.card-box {
+    width: 330px;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    display: none;
 
+}
 </style>
