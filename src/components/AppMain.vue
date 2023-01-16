@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template>
-    <section class="container d-flex">
+    <section class="container d-flex bg-dark">
         <div class="row">
             <h2>Movies</h2>
             <div class="col-3 col-xs-3" v-for="movie in store.moviesList">
@@ -83,7 +83,7 @@ div.col-3 {
     position: relative;
 }
 img:hover {
-    filter: opacity(20%);
+    filter: opacity(30%);
 }
 .img-wrapper:hover .card-box {
     display: inline-block;
@@ -96,7 +96,7 @@ img:hover {
     bottom: 0px;
     left: 0px;
     display: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     // color: black;
     cursor: pointer;
 }
