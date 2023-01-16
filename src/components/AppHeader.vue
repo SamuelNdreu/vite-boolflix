@@ -7,6 +7,12 @@ export default {
             store,
         }
     },
+    methods: {
+
+    },
+    created() {
+        
+    },
 }
 </script>
 
