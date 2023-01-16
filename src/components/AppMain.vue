@@ -2,6 +2,7 @@
 import { store } from '../store.js'
 import LangFlag from 'vue-lang-code-flags';
 
+
 export default {
     name: 'AppMain',
     components: {
@@ -13,7 +14,9 @@ export default {
         }
     },
     methods: {
+        seeStars() {
 
+    }
     },
     created() {
 
