@@ -47,7 +47,6 @@ export default {
                     <em>{{ tvShow.original_name }}</em>
                 </h5>
                 <p>Language: <lang-flag :iso="tvShow.original_language" /> </p>
-                <p>Rating: {{ tvShow.vote_average }}</p>
                 <p>Rating: {{ Math.ceil(tvShow.vote_average / 2) }}</p>
             </div>
         </div>
