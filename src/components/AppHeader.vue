@@ -63,10 +63,10 @@ export default {
             <div class="col-12">
                 <h1>BoolFlixxx</h1>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-controll" placeholder="Cerca Aqui" aria-label="Recipent's Username"
-                        aria-describedby="button-search" v-model="store.searchText" @keyup.enter="getMovies,getTvShows(store.searchText)">
+                    <input type="text" class="form-control" placeholder="Cerca" aria-label="Recipient's username"
+                            aria-describedby="button-search" v-model="store.searchText" @keyup.enter="getMovies(store.searchText);getTvShows(store.search)">
                     <button class="btn btn-outline-secondary" type="button" id="button-search"
-                        @click="getMovies(store.searchText)">Search</button>
+                        @click="getMovies (store.searchText);getTvShows(store.search)">Search</button>
     
     
                 </div>
