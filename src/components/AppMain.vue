@@ -14,7 +14,7 @@ export default {
         }
     },
     methods: {
-         
+
     },
     created() {
 
@@ -24,42 +24,47 @@ export default {
 
 <template>
     <section class="container d-flex">
-        <div class="row  ">
+        <div class="row">
             <h2>Movies</h2>
             <div class="col-3 col-xs-3" v-for="movie in store.moviesList">
-                <img :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" :alt="movie.title">
-                <div class="card-box">
-                    <h4>
-                        {{ movie.title }}
-                    </h4>
-                    <h5>
-                        {{ movie.original_title }}
-                    </h5>
-                    <p>Language: <lang-flag :iso="movie.original_language" /></p>
-                    <p>Rating: <i class="fa-solid fa-star" v-for="n in Math.ceil(movie.vote_average / 2)"></i><i
-                            class="fa-regular fa-star" v-for="n in Math.floor(5 - (movie.vote_average / 2))"></i></p>
-                    <p class="overview">
-                        Overview: {{ movie.overview }}
-                    </p>
+                <div class="img-wrapper">
+                    <img :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" :alt="movie.title">
+                    <div class="card-box">
+                        <h4>
+                            {{ movie.title }}
+                        </h4>
+                        <h5>
+                            {{ movie.original_title }}
+                        </h5>
+                        <p>Language: <lang-flag :iso="movie.original_language" /></p>
+                        <p> Rating: <i class="fa-solid fa-star" v-for="n in (Math.ceil(movie.vote_average / 2))"></i> </p>
+
+                        <p class="overview">
+                            Overview: {{ movie.overview }}
+                        </p>
+                    </div>
                 </div>
             </div>
-
             <h2>Tv shows</h2>
             <div class="col-3 col-xs-3" v-for="tvShow in store.searchedTvshow">
-                <img :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" :alt="tvShow.name">
-                <div class="card-box">
-                    <h4>
-                        {{ tvShow.name }}
-                    </h4>
-                    <h5>
-                        <em>{{ tvShow.original_name }}</em>
-                    </h5>
-                    <p>Language: <lang-flag :iso="tvShow.original_language" /> </p>
-                    <p>Rating: {{ Math.ceil(tvShow.vote_average / 2) }}</p>
+                <div class="img-wrapper">
+                    <img :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" :alt="tvShow.name">
+                    <div class="card-box">
+                        <h4>
+                            {{ tvShow.name }}
+                        </h4>
+                        <h5>
+                            <em>{{ tvShow.original_name }}</em>
+                        </h5>
+                        <p>Language: <lang-flag :iso="tvShow.original_language" /> </p>
+                        <p>Rating: {{ Math.ceil(tvShow.vote_average / 2) }}</p>
+                        <p class="overview">
+                            Overview: {{ tvShow.overview }}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-
+        </div>    
     </section>
 </template>
 
@@ -74,8 +79,14 @@ div.col-3 {
     margin: 2rem;
 }
 
+.img-wrapper {
+    position: relative;
+}
 img:hover {
-    filter: opacity(10%);
+    filter: opacity(20%);
+}
+.img-wrapper:hover .card-box {
+    display: inline-block;
 }
 
 .card-box {
@@ -83,7 +94,10 @@ img:hover {
     text-align: center;
     position: absolute;
     bottom: 0px;
+    left: 0px;
     display: none;
-
+    color: rgb(0, 0, 0);
+    // color: black;
+    cursor: pointer;
 }
 </style>
