@@ -11,12 +11,12 @@ export default {
         }
     },
     methods: {
-        getMovies(){
+        getMovies(searchedQuery){
             //chiamata API
             axios.get(this.apiUri,{ 
                 params:{
                     api_key:this.apiKey,
-                    query: 'Furios'
+                    query: searchedQuery
                 }
                 
             })
@@ -43,19 +43,10 @@ export default {
                 <h1>BoolFlixxx</h1>
                 <div class="input-group mb-3">
                     <input type="text" class="form-controll" placeholder="Cerca Aqui" aria-label="Recipent's Username"
-                        aria-describedby="button-search" v-model="store.searchText" @keyup.enter="$emit('searchMovie')">
+                        aria-describedby="button-search" v-model="store.searchText" @keyup.enter="getMovies(store.searchText)">
                     <button class="btn btn-outline-secondary" type="button" id="button-search"
-                        @click="$emit('searchMovie')">Cerca</button>
-                    <ul>
-                        <li v-for="movieElement in store.moviesList">
-                            <h3>{{ movieElement.title }}</h3>
-                            <h5>{{ movieElement.original_title }}</h5>
-                            <p> Language: {{ movieElement.original_language }} <br>
-                                Rating: {{ movieElement.vote_average }} stars
-                            </p>
-                        </li>
-                        
-                    </ul>    
+                        @click="getMovies(store.searchText)">Search</button>
+    
     
                 </div>
             </div>
