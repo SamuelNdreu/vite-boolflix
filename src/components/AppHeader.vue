@@ -47,12 +47,14 @@ export default {
                     <button class="btn btn-outline-secondary" type="button" id="button-search"
                         @click="$emit('searchMovie')">Cerca</button>
                     <ul>
-                        <li v-for="movieElement in store.moviesList"></li>
-                        <h3>{{ movieElement.title }}</h3>
-                        <h5>{{ movieElement.original_Title }}</h5>
-                        <p>Language: {{ movieElement.original_language }} <br>
-                            Rating: {{ vote_average }} stars
-                        </p>
+                        <li v-for="movieElement in store.moviesList">
+                            <h3>{{ movieElement.title }}</h3>
+                            <h5>{{ movieElement.original_title }}</h5>
+                            <p> Language: {{ movieElement.original_language }} <br>
+                                Rating: {{ movieElement.vote_average }} stars
+                            </p>
+                        </li>
+                        
                     </ul>    
     
                 </div>
