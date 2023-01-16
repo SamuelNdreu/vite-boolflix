@@ -15,12 +15,21 @@ export default {
 </script>
 
 <template>
-    <AppHeader @searchMovie="[searchMovie(store.searchText), searchTvshow(store.searchText)]" />
-    <AppMain />
+    <header>
+        <AppHeader @searchMovie="[searchMovie(store.searchText), searchTvshow(store.searchText)]" />
+    </header>
+
+    <main>
+        <AppMain />
+    </main>
 
 </template>
 
 <style lang="scss">
 @use './styles/general.scss' as *;
 @use './styles/partials/variable' as *;
+header{
+    background-color: #0b0b0b;
+    color: red
+  }
 </style>

@@ -7,12 +7,12 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faStar, faX } from '@fortawesome/free-solid-svg-icons'
 
 /* import specific icons */
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add(faUserSecret)
+library.add(faStar,faMagnifyingGlass,faX)
 
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
