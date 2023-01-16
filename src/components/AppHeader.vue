@@ -8,7 +8,7 @@ export default {
             store,
             apiKey:'56fe84a4653ee995f78bcfae8038ddd7',
             apiUri:'https://api.themoviedb.org/3/search/movie',
-            apiUriTvShows:'https://api.themoviedb.org/3/search/tv?api_key=56fe84a4653ee995f78bcfae8038ddd7&language=en-US&page=1&query=DRAGO&include_adult=false',
+            apiUriTvShows:'https://api.themoviedb.org/3/search/tv',
         }
     },
     methods: {
@@ -48,6 +48,11 @@ export default {
             });
 
         },
+
+        getApi(search) {
+            this.getTvShows(search);
+            this.getMovies(search);
+}
         
     },
     created() {
@@ -64,9 +69,9 @@ export default {
                 <h1>BoolFlixxx</h1>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Cerca" aria-label="Recipient's username"
-                            aria-describedby="button-search" v-model="store.searchText" @keyup.enter="getMovies(store.searchText);getTvShows(store.search)">
+                            aria-describedby="button-search" v-model="store.searchText" @keyup.enter="getApi(store.searchText)">
                     <button class="btn btn-outline-secondary" type="button" id="button-search"
-                        @click="getMovies (store.searchText);getTvShows(store.search)">Search</button>
+                        @click="getApi(store.searchText)">Search</button>
     
     
                 </div>
