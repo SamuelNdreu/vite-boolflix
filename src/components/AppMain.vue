@@ -131,7 +131,7 @@ img:hover {
     text-align: center;
     position: absolute;
     bottom: 0px;
-    right: 20px;
+    right: 10px;
     display: none;
     color: rgb(255, 255, 255);
     // color: black;
