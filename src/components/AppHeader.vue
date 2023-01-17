@@ -98,7 +98,7 @@ export default {
                     <!-- Container wrapper -->
                     <div class="container-fluid">
                         <!-- Navbar brand -->
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="">
                             <img src="../assets/imgs/LOGO BOOLFLIX.svg" height="40" alt=""
                                 loading="lazy" />
                         </a>
@@ -122,6 +122,9 @@ export default {
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Movies</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Original</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Recently Added</a>
