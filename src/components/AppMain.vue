@@ -14,6 +14,14 @@ export default {
         }
     },
     methods: {
+        getImagePath(imgName) {
+            if (imgName !== 'da' && imgName !== 'de' && imgName !== 'en' && imgName !== 'fr' && imgName !== 'hi' && imgName !== 'it' && imgName !== 'ja' && imgName !== 'zh') {
+                imgName = 'nc'
+                return new URL(`../assets/imgs/${imgName}.png`, import.meta.url).href;
+            } else {
+                return new URL(`../assets/imgs/${imgName}.png`, import.meta.url).href;
+            }
+        }
 
     },
     created() {
@@ -23,7 +31,7 @@ export default {
 </script>
 
 <template>
-    <section class="container d-flex bg-dark">
+    <section class="container d-flex bg-dark text-light">
         <div class="row">
             <h2>Movies</h2>
             <div class="col-3 col-xs-3" v-for="movie in store.moviesList">
@@ -36,8 +44,10 @@ export default {
                         <h5>
                             {{ movie.original_title }}
                         </h5>
-                        <p>Language: <lang-flag :iso="movie.original_language" /></p>
-                        <p> Rating: <i class="fa-solid fa-star" v-for="n in (Math.ceil(movie.vote_average / 2))"></i> </p>
+                        <p>Language: <img class="flag" :src="getImagePath(movie.original_language)"
+                                alt="Non disponibile"></p>
+                        <p> Rating: <i class="fa-solid fa-star" v-for="n in (Math.ceil(movie.vote_average / 2))"></i>
+                        </p>
 
                         <p class="overview">
                             Overview: {{ movie.overview }}
@@ -56,15 +66,17 @@ export default {
                         <h5>
                             <em>{{ tvShow.original_name }}</em>
                         </h5>
-                        <p>Language: <lang-flag :iso="tvShow.original_language" /> </p>
-                        <p>Rating: {{ Math.ceil(tvShow.vote_average / 2) }}</p>
+                        <p>Language: <img class="flag" :src="getImagePath(tvShow.original_language)"
+                                alt="Non disponibile"></p>
+                        <p> Rating: <i class="fa-solid fa-star" v-for="n in (Math.ceil(tvShow.vote_average / 2))"></i>
+                        </p>
                         <p class="overview">
                             Overview: {{ tvShow.overview }}
                         </p>
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
     </section>
 </template>
 
@@ -82,9 +94,11 @@ div.col-3 {
 .img-wrapper {
     position: relative;
 }
+
 img:hover {
-    filter: opacity(30%);
+    filter: opacity(10%);
 }
+
 .img-wrapper:hover .card-box {
     display: inline-block;
 }
@@ -99,5 +113,9 @@ img:hover {
     color: rgb(255, 255, 255);
     // color: black;
     cursor: pointer;
+}
+
+img.flag {
+    height: 30px;
 }
 </style>
