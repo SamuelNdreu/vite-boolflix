@@ -2,7 +2,7 @@
 import { store } from './store.js'
 import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/AppMain.vue'
-import AppCredits from './components/AppCredits.vue'
+
 export default {
     components: {
         AppHeader,
@@ -22,7 +22,7 @@ export default {
 
     <main>
         <AppMain />
-        <AppCredits />
+        
     </main>
 
 </template>
