@@ -1,12 +1,14 @@
 <script>
 import { store } from '../store.js'
 import LangFlag from 'vue-lang-code-flags';
+import AppCredits from './AppCredits.vue'
 
 
 export default {
     name: 'AppMain',
     components: {
         LangFlag,
+        AppCredits
     },
     data() {
         return {
@@ -52,6 +54,7 @@ export default {
                         <p class="overview">
                             Overview: {{ movie.overview }}
                         </p>
+                        <AppCredits />
                     </div>
                 </div>
             </div>

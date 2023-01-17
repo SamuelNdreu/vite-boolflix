@@ -9,6 +9,7 @@ export default {
             apiKey: '56fe84a4653ee995f78bcfae8038ddd7',
             apiUri: 'https://api.themoviedb.org/3/search/movie',
             apiUriTvShows: 'https://api.themoviedb.org/3/search/tv',
+            apiFindActor: "https://api.themoviedb.org/3/search/person"
         }
     },
     methods: {
@@ -49,9 +50,32 @@ export default {
 
         },
 
+        getActors(searchedQuery) {
+            //chiamata API
+            axios.get(this.apiFindActor, {
+                params: {
+                    api_key: this.apiKey,
+                    query: searchedQuery
+                }
+
+            })
+                .then((response) => {
+                    console.log(response.data.results);
+                    this.store.searchedTvActors = response.data.results;
+                })
+                .catch(function (error) {
+                    console.warn(error)
+                });
+
+        },
+
+
+
+
         getApi(search) {
             this.getTvShows(search);
             this.getMovies(search);
+            this.getActors(search)
         }
 
     },
