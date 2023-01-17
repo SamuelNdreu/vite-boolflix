@@ -81,7 +81,8 @@ export default {
     },
     created() {
         this.getMovies();
-        this.getTvShows;
+        this.getTvShows();
+        this.getActors();
     },
 }
 </script>
