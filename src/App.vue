@@ -10,9 +10,10 @@ export default {
     },
     data() {
         return {
-            
+
+        }
+    }
 }
-}}
 </script>
 
 <template>
@@ -22,7 +23,7 @@ export default {
 
     <main>
         <AppMain />
-        
+
     </main>
 
 </template>
@@ -30,8 +31,9 @@ export default {
 <style lang="scss">
 @use './styles/general.scss' as *;
 @use './styles/partials/variable' as *;
-header{
-    background-color: #0b0b0b;
-    color: red
-  }
+
+header {
+    background-color: #212529;
+    
+}
 </style>

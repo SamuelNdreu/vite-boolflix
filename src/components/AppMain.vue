@@ -33,10 +33,10 @@ export default {
 </script>
 
 <template>
-    <section class="container d-flex bg-dark text-light">
+    <section class="container-fluid d-flex bg-dark text-light">
         <div class="row">
             <h2>Movies</h2>
-            <div class="col-3 md-3 g-3" v-for="movie in store.moviesList">
+            <div class="col-2 md-3 g-3" v-for="movie in store.moviesList">
                 <div class="img-wrapper ">
                     <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" :alt="movie.title">
                     <div class="card-box">
