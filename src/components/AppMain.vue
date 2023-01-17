@@ -38,7 +38,8 @@ export default {
             <h2>Movies</h2>
             <div class="col-2 md-3 g-3" v-for="movie in store.moviesList">
                 <div class="img-wrapper ">
-                    <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" :alt="movie.title">
+                    <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`"
+                        :alt="movie.title">
                     <div class="card-box">
                         <h4>
                             {{ movie.title }}
@@ -59,9 +60,10 @@ export default {
                 </div>
             </div>
             <h2>Tv shows</h2>
-            <div class="col-3 md-3 g-3" v-for="tvShow in store.searchedTvshow">
+            <div class="col-2 md-3 g-3" v-for="tvShow in store.searchedTvshow">
                 <div class="img-wrapper">
-                    <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" :alt="tvShow.name">
+                    <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`"
+                        :alt="tvShow.name">
                     <div class="card-box">
                         <h4>
                             {{ tvShow.name }}
@@ -87,20 +89,37 @@ export default {
 <style lang="scss" scoped>
 .overview {
     font-size: 0.8rem;
+    height: 50%;
+    text-align: center;
+}
+
+h4 {
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+h5 {
+    font-size: 0.7rem;
+    font-weight: 400;
 }
 
 div.col-3 {
     position: relative;
-    
+
 }
 
 .img-wrapper {
     position: relative;
-    
+
 }
 
 img:hover {
     filter: opacity(10%);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    
 }
 
 .img-wrapper:hover .card-box {

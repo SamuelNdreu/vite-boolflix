@@ -32,6 +32,7 @@ export default {
 @use './styles/general.scss' as *;
 @use './styles/partials/variable' as *;
 
+
 header {
     background-color: #212529;
     

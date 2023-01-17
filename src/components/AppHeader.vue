@@ -99,14 +99,13 @@ export default {
                     <div class="container-fluid">
                         <!-- Navbar brand -->
                         <a class="navbar-brand" href="">
-                            <img src="../assets/imgs/LOGO BOOLFLIX.svg" height="40" alt=""
-                                loading="lazy" />
+                            <img src="../assets/imgs/LOGO BOOLFLIX.svg" height="40" alt="" loading="lazy" />
                         </a>
 
                         <!-- Toggle button -->
                         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
                             data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation" >
+                            aria-expanded="false" aria-label="Toggle navigation">
                             <i class="fas fa-bars"></i>
                         </button>
 
@@ -137,15 +136,15 @@ export default {
 
                             <!-- Search form -->
                             <form class="d-flex input-group w-auto">
-                                <input type="text" class="form-control" placeholder="Cerca" aria-label="Recipient's username"
-                                    aria-describedby="button-search" v-model="store.searchText"
-                                    @keyup.enter="getApi(store.searchText)">
-                                    <button class="btn btn-danger" style="padding: .45rem 1.5rem .35rem" type="button" id="button-search"
-                                    @click="getApi(store.searchText)">Search</button>
+                                <input type="text" class="form-control" placeholder="Cerca"
+                                    aria-label="Recipient's username" aria-describedby="button-search"
+                                    v-model="store.searchText" @keyup.enter="getApi(store.searchText)">
+                                <button class="btn btn-danger" style="padding: .45rem 1.5rem .35rem" type="button"
+                                    id="button-search" @click="getApi(store.searchText)">Search</button>
                             </form>
                             <ul class="navbar-nav mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">CHILDREN</a>
+                                    <a class="nav-link" href="#">USER01</a>
                                 </li>
                                 <!-- Navbar dropdown -->
                                 <li class="nav-item dropdown">
@@ -155,7 +154,7 @@ export default {
                                     </a>
                                     <!-- Dropdown menu -->
                                     <ul class="dropdown-menu dropdown-menu-end notifications-list p-1"
-                                        aria-labelledby="navbarDropdown">
+                                        aria-labelledby="navbarDropdown" aria-expanded="false">
                                         <li>
                                             <div class="row">
                                                 <div class="col-md">
@@ -300,14 +299,23 @@ export default {
     align-items: baseline;
 }
 
-.my_form {
-    width: 50%;
-    border: 1px solid black
-}
+
 
 h1 {
     margin-right: 50%;
     padding-top: 1rem;
     font-weight: 600;
+}
+
+.navbar-dark .nav-item .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    border-radius: 0.25rem;
+    color: #fff;
+}
+
+.fa-li {
+    position: relative;
+    left: 0;
 }
 </style>

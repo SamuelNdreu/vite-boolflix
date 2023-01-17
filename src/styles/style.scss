@@ -1,5 +1,6 @@
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 //reset
 *{
@@ -10,4 +11,6 @@
 
 body{
   background-color: #212529 ;
+  font-family: 'Josefin Sans', sans-serif;
+
 }
