@@ -59,7 +59,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <h2>Tv shows</h2>
+            <h2>Tv Shows</h2>
             <div class="col-2 md-3 g-3" v-for="tvShow in store.searchedTvshow">
                 <div class="img-wrapper">
                     <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`"

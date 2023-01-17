@@ -91,7 +91,7 @@ export default {
     <section class="container">
         <div class="row">
             <div class="col-12">
-                <h1>BoolFlixxx</h1>
+                <h1>BoolFlix</h1>
                 <!-- Navbar -->
                 <!-- Navbar -->
                 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
@@ -110,7 +110,7 @@ export default {
                         </button>
 
                         <!-- Collapsible wrapper -->
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse mt-3" id="navbarSupportedContent">
                             <!-- Left links -->
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
@@ -136,7 +136,7 @@ export default {
 
                             <!-- Search form -->
                             <form class="d-flex input-group w-auto">
-                                <input type="text" class="form-control" placeholder="Cerca"
+                                <input type="text" class="form-control bg-dark text-light" placeholder="Cerca"
                                     aria-label="Recipient's username" aria-describedby="button-search"
                                     v-model="store.searchText" @keyup.enter="getApi(store.searchText)">
                                 <button class="btn btn-danger" style="padding: .45rem 1.5rem .35rem" type="button"
