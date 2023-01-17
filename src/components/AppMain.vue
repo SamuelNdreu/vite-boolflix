@@ -34,9 +34,9 @@ export default {
     <section class="container d-flex bg-dark text-light">
         <div class="row">
             <h2>Movies</h2>
-            <div class="col-3 col-xs-3" v-for="movie in store.moviesList">
-                <div class="img-wrapper">
-                    <img :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" :alt="movie.title">
+            <div class="col-3 md-3 g-3" v-for="movie in store.moviesList">
+                <div class="img-wrapper ">
+                    <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" :alt="movie.title">
                     <div class="card-box">
                         <h4>
                             {{ movie.title }}
@@ -56,9 +56,9 @@ export default {
                 </div>
             </div>
             <h2>Tv shows</h2>
-            <div class="col-3 col-xs-3" v-for="tvShow in store.searchedTvshow">
+            <div class="col-3 md-3 g-3" v-for="tvShow in store.searchedTvshow">
                 <div class="img-wrapper">
-                    <img :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" :alt="tvShow.name">
+                    <img class="img-fluid" :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" :alt="tvShow.name">
                     <div class="card-box">
                         <h4>
                             {{ tvShow.name }}
@@ -88,11 +88,12 @@ export default {
 
 div.col-3 {
     position: relative;
-    margin: 2rem;
+    
 }
 
 .img-wrapper {
     position: relative;
+    
 }
 
 img:hover {
@@ -104,11 +105,11 @@ img:hover {
 }
 
 .card-box {
-    width: 330px;
+    width: 280px;
     text-align: center;
     position: absolute;
     bottom: 0px;
-    left: 0px;
+    right: 20px;
     display: none;
     color: rgb(255, 255, 255);
     // color: black;
